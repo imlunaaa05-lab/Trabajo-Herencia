@@ -80,7 +80,7 @@ public class Main {
         Persona[] personas = {p1, p2, p3};
 
         for (Persona p : personas) {
-            System.out.println("Tipo: " + p.getClass().getSimpleName());
+            System.out.println("Persona: " + p.getClass().getSimpleName());
             p.mostrarInfo();
             p.rol();
             System.out.println("-------------------");
