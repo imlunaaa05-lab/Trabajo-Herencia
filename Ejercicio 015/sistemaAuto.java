@@ -1,6 +1,5 @@
 class Vehiculo {
-    String marca;
-    String modelo;
+    String marca, modelo;
     int velocidad;
 
     public Vehiculo(String marca, String modelo, int velocidad) {
@@ -18,31 +17,43 @@ class Vehiculo {
 }
 
 class Carro extends Vehiculo {
-    public Carro(String m,String mo,int v){
-        super(m,mo,v);
-    }
+    public Carro(String m,String mo,int v){ super(m,mo,v); }
 
     public void funcionamiento() {
-        System.out.println("Vehículo familiar de uso urbano");
+        System.out.println("Uso urbano familiar");
     }
 }
 
 class Moto extends Vehiculo {
-    public Moto(String m,String mo,int v){
-        super(m,mo,v);
-    }
+    public Moto(String m,String mo,int v){ super(m,mo,v); }
 
     public void funcionamiento() {
-        System.out.println("Vehículo ágil de dos ruedas");
+        System.out.println("Vehículo de dos ruedas");
     }
 }
 
 class Camion extends Vehiculo {
-    public Camion(String m,String mo,int v){
-        super(m,mo,v);
-    }
+    public Camion(String m,String mo,int v){ super(m,mo,v); }
 
     public void funcionamiento() {
-        System.out.println("Vehículo pesado de carga");
+        System.out.println("Transporte de carga pesada");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Vehiculo[] lista = {
+            new Carro("Toyota","Corolla",180),
+            new Moto("Yamaha","R15",150),
+            new Camion("Volvo","FH",120)
+        };
+
+        for(Vehiculo v : lista){
+            System.out.println("Tipo: "+v.getClass().getSimpleName());
+            v.info();
+            v.funcionamiento();
+            System.out.println("-----");
+        }
     }
 }
